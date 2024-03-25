@@ -25,9 +25,22 @@ const VerifyOTPPage = () => {
 
 	const resendCode = async () => {}
 
+	const openLink = () => {
+		Linking.openURL('https://wikipedia.com')
+	}
+
 	return (
 		<View style={styles.container}>
-			<Text>VerifyOTPPage</Text>
+			<Text style={styles.legal}>
+				You must be{' '}
+				<Text style={styles.link} onPress={openLink}>
+					at least 16 years old
+				</Text>{' '}
+				to register. Learn how WhatsApp works with the{' '}
+				<Text style={styles.link} onPress={openLink}>
+					Meta Companies
+				</Text>
+			</Text>
 		</View>
 	)
 }
@@ -59,5 +72,8 @@ const styles = StyleSheet.create({
 	buttonText: {
 		color: Colors.primary,
 		fontSize: 18
+	},
+	link: {
+		color: Colors.primary
 	}
 })
