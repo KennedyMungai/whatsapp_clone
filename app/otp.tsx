@@ -26,7 +26,14 @@ const OTPPage = () => {
 		Linking.openURL('https://wikipedia.com')
 	}
 
-	const sendOTP = async () => {}
+	const sendOTP = async () => {
+		setLoading(true)
+
+		setTimeout(() => {
+			setLoading(false)
+			// router.push('/otp')
+		}, 2000)
+	}
 
 	const trySignIn = async () => {}
 
@@ -52,7 +59,7 @@ const OTPPage = () => {
 	return (
 		<KeyboardAvoidingView style={{ flex: 1 }}>
 			<View style={styles.container}>
-				{!loading && (
+				{loading && (
 					<View style={[StyleSheet.absoluteFill, styles.loading]}>
 						<ActivityIndicator
 							size={'large'}
