@@ -1,5 +1,5 @@
 import { useLocalSearchParams } from 'expo-router'
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 const VerifyOTPPage = () => {
@@ -7,6 +7,8 @@ const VerifyOTPPage = () => {
 		phoneNumber: string
 		signIn: string
 	}>()
+
+	const [code, setCode] = useState('')
 
 	return (
 		<View>
