@@ -67,13 +67,15 @@ const VerifyOTPPage = () => {
 				// })}
 				testID='my-code-input'
 				renderCell={({ index, symbol, isFocused }) => (
-					<Text
+					<View
 						key={index}
 						style={[styles.cellRoot, isFocused && styles.focusCell]}
 						onLayout={getCellOnLayoutHandler(index)}
 					>
-						{symbol || (isFocused ? <Cursor /> : null)}
-					</Text>
+						<Text style={styles.cellText}>
+							{symbol || (isFocused ? <Cursor /> : null)}
+						</Text>
+					</View>
 				)}
 			/>
 
@@ -118,20 +120,28 @@ const styles = StyleSheet.create({
 		color: Colors.primary
 	},
 	codeFieldRoot: {
-		marginTop: 20
+		marginTop: 20,
+		width: 260,
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		gap: 4
 	},
 	cellRoot: {
-		width: 50,
-		height: 50,
-		borderRadius: 10,
-		marginRight: 5,
-		lineHeight: 45,
-		fontSize: 24,
-		borderWidth: 2,
-		borderColor: '#00000030',
+		width: 40,
+		height: 40,
+		justifyContent: 'center',
+		alignItems: 'center',
+		borderBottomColor: '#ccc',
+		borderBottomWidth: 1
+	},
+	cellText: {
+		color: '#000',
+		fontSize: 36,
 		textAlign: 'center'
 	},
 	focusCell: {
-		borderColor: '#000'
+		paddingBottom: 4,
+		borderBottomColor: '#000',
+		borderBottomWidth: 2
 	}
 })
