@@ -17,8 +17,6 @@ const VerifyOTPPage = () => {
 
 	const [code, setCode] = useState('')
 
-	const router = useRouter()
-
 	useEffect(() => {
 		if (code.length === 6) {
 			if (signIn === 'true') {
