@@ -52,7 +52,7 @@ const OTPPage = () => {
 	return (
 		<KeyboardAvoidingView style={{ flex: 1 }}>
 			<View style={styles.container}>
-				{loading && (
+				{!loading && (
 					<View style={[StyleSheet.absoluteFill, styles.loading]}>
 						<ActivityIndicator />
 					</View>
@@ -183,6 +183,7 @@ const styles = StyleSheet.create({
 		marginTop: 10
 	},
 	loading: {
+		...StyleSheet.absoluteFillObject,
 		zIndex: 10,
 		backgroundColor: 'white',
 		justifyContent: 'center',
