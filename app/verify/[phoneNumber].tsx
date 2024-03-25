@@ -1,5 +1,5 @@
 import Colors from '@/constants/Colors'
-import { useLocalSearchParams } from 'expo-router'
+import { Stack, useLocalSearchParams } from 'expo-router'
 import React, { useEffect, useState } from 'react'
 import { Linking, StyleSheet, Text, View } from 'react-native'
 
@@ -25,12 +25,9 @@ const VerifyOTPPage = () => {
 
 	const resendCode = async () => {}
 
-	const openLink = () => {
-		Linking.openURL('https://wikipedia.com')
-	}
-
 	return (
 		<View style={styles.container}>
+			<Stack.Screen options={{ title: phoneNumber }} />
 			<Text style={styles.legal}>
 				We have sent you an SMS with a code the number above
 			</Text>
