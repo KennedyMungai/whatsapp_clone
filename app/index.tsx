@@ -1,3 +1,5 @@
+import Colors from '@/constants/Colors'
+import { Link } from 'expo-router'
 import React from 'react'
 import {
 	Image,
@@ -8,8 +10,6 @@ import {
 	View
 } from 'react-native'
 import welcomeImage from '../assets/images/welcome.png'
-import Colors from '@/constants/Colors'
-import { Link } from 'expo-router'
 
 const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 
