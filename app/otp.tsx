@@ -58,6 +58,7 @@ const OTPPage = () => {
 							size={'large'}
 							color={Colors.primary}
 						/>
+						<Text style={{ marginTop: 10 }}>Loading...</Text>
 					</View>
 				)}
 				<Text style={styles.description}>
