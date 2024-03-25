@@ -8,6 +8,7 @@ import {
 	Platform,
 	StyleSheet,
 	Text,
+	TouchableOpacity,
 	View
 } from 'react-native'
 
@@ -55,6 +56,10 @@ const OTPPage = () => {
 						Meta Companies
 					</Text>
 				</Text>
+
+				<TouchableOpacity onPress={sendOTP}>
+					<Text>Next</Text>
+				</TouchableOpacity>
 			</View>
 		</KeyboardAvoidingView>
 	)
@@ -104,5 +109,16 @@ const styles = StyleSheet.create({
 	},
 	link: {
 		color: Colors.primary
+	},
+	button: {
+		width: '100%',
+		alignItems: 'center',
+		backgroundColor: Colors.lightGray,
+		padding: 10,
+		borderRadius: 10
+	},
+	enabled: {
+		backgroundColor: Colors.primary,
+		color: 'white'
 	}
 })
