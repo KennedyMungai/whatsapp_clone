@@ -45,7 +45,8 @@ function RootLayoutNav() {
 				name='otp'
 				options={{
 					headerTitle: 'Enter your Phone Number',
-					animation: 'slide_from_right'
+					animation: 'slide_from_right',
+					headerBackVisible: false
 				}}
 			/>
 		</Stack>
