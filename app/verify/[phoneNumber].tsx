@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
 		width: 260,
 		marginLeft: 'auto',
 		marginRight: 'auto',
-		gap: 4
+		gap: 10
 	},
 	cellRoot: {
 		width: 40,
