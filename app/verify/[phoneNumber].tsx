@@ -19,9 +19,11 @@ const VerifyOTPPage = () => {
 
 	useEffect(() => {
 		if (code.length === 6) {
-			console.log('code', code)
-
-			// TODO: Add verification code
+			if (signIn === 'true') {
+				verifySignIn()
+			} else {
+				verifyCode()
+			}
 		}
 	}, [code])
 
