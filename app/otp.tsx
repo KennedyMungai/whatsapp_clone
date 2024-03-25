@@ -1,5 +1,4 @@
 import Colors from '@/constants/Colors'
-import { defaultStyles } from '@/constants/Styles'
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
@@ -44,7 +43,7 @@ const OTPPage = () => {
 							color={Colors.gray}
 						/>
 					</View>
-					<View style={defaultStyles.separator} />
+					<View style={styles.separator} />
 				</View>
 			</View>
 		</KeyboardAvoidingView>
@@ -81,5 +80,11 @@ const styles = StyleSheet.create({
 	listItemText: {
 		fontSize: 18,
 		color: Colors.primary
+	},
+	separator: {
+		width: '100%',
+		height: 1,
+		backgroundColor: Colors.gray,
+		opacity: 0.2
 	}
 })
