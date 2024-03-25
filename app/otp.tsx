@@ -86,5 +86,13 @@ const styles = StyleSheet.create({
 		height: 1,
 		backgroundColor: Colors.gray,
 		opacity: 0.2
+	},
+	legal: {
+		fontSize: 12,
+		textAlign: 'center',
+		color: 'black'
+	},
+	link: {
+		color: Colors.primary
 	}
 })
