@@ -1,7 +1,7 @@
 import Colors from '@/constants/Colors'
 import { useLocalSearchParams } from 'expo-router'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Linking, StyleSheet, Text, View } from 'react-native'
 
 const VerifyOTPPage = () => {
 	const { phoneNumber, signIn } = useLocalSearchParams<{
@@ -32,14 +32,11 @@ const VerifyOTPPage = () => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.legal}>
-				You must be{' '}
-				<Text style={styles.link} onPress={openLink}>
-					at least 16 years old
-				</Text>{' '}
-				to register. Learn how WhatsApp works with the{' '}
-				<Text style={styles.link} onPress={openLink}>
-					Meta Companies
-				</Text>
+				We have sent you an SMS with a code the number above
+			</Text>
+			<Text style={styles.legal}>
+				To complete your phone number verification, please enter the 6
+				digit verification code
 			</Text>
 		</View>
 	)
