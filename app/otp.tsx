@@ -14,7 +14,7 @@ import {
 
 const OTPPage = () => {
 	const [loading, setLoading] = useState(false)
-	const [phoneNumber, setPhoneNumber] = useState('')
+	const [phoneNumber, setPhoneNumber] = useState('12')
 
 	const router = useRouter()
 
@@ -64,7 +64,15 @@ const OTPPage = () => {
 						phoneNumber !== '' ? styles.enabled : null
 					]}
 				>
-					<Text>Next</Text>
+					<Text
+						style={
+							phoneNumber !== '0'
+								? { color: 'white', fontWeight: '600' }
+								: null
+						}
+					>
+						Next
+					</Text>
 				</TouchableOpacity>
 			</View>
 		</KeyboardAvoidingView>
