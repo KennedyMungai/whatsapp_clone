@@ -40,7 +40,7 @@ const OTPPage = () => {
 						<Ionicons
 							name='chevron-forward'
 							size={24}
-							color={Colors.primary}
+							color={Colors.gray}
 						/>
 					</View>
 				</View>
