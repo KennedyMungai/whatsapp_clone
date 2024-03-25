@@ -4,7 +4,7 @@ import React from 'react'
 const TabLayoutFile = () => {
 	return (
 		<Tabs>
-			<Tabs.Screen name='index' />
+			<Tabs.Screen name='chats' />
 		</Tabs>
 	)
 }
