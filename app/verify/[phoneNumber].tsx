@@ -27,7 +27,7 @@ const VerifyOTPPage = () => {
 
 	return (
 		<View style={styles.container}>
-			<Stack.Screen options={{ title: phoneNumber }} />
+			<Stack.Screen options={{ headerTitle: phoneNumber }} />
 			<Text style={styles.legal}>
 				We have sent you an SMS with a code the number above
 			</Text>
