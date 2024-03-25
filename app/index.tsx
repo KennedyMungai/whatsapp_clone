@@ -17,7 +17,10 @@ export default MainAppPage
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		padding: 20
+		padding: 20,
+		backgroundColor: 'white',
+		alignItems: 'center',
+		justifyContent: 'center'
 	},
 	image: {
 		width: '100%',
