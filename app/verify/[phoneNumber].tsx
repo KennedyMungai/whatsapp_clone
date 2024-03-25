@@ -1,5 +1,6 @@
+import Colors from '@/constants/Colors'
 import { useLocalSearchParams } from 'expo-router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 const VerifyOTPPage = () => {
@@ -10,8 +11,22 @@ const VerifyOTPPage = () => {
 
 	const [code, setCode] = useState('')
 
+	useEffect(() => {
+		if (code.length === 6) {
+			console.log('code', code)
+
+			// TODO: Add verification code
+		}
+	}, [code])
+
+	const verifyCode = async () => {}
+
+	const verifySignIn = async () => {}
+
+	const resendCode = async () => {}
+
 	return (
-		<View>
+		<View style={styles.container}>
 			<Text>VerifyOTPPage</Text>
 		</View>
 	)
@@ -19,4 +34,30 @@ const VerifyOTPPage = () => {
 
 export default VerifyOTPPage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		alignItems: 'center',
+		padding: 20,
+		backgroundColor: Colors.background,
+		gap: 20
+	},
+	loading: {
+		backgroundColor: 'rgba(0,0,0,0.5)',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	legal: {
+		fontSize: 14,
+		textAlign: 'center',
+		color: '#000'
+	},
+	button: {
+		width: '100%',
+		alignItems: 'center'
+	},
+	buttonText: {
+		color: Colors.primary,
+		fontSize: 18
+	}
+})
