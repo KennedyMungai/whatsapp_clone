@@ -1,7 +1,8 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import welcomeImage from '../assets/images/welcome.png'
 import Colors from '@/constants/Colors'
+import { Link } from 'expo-router'
 
 const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 
@@ -23,6 +24,11 @@ const MainAppPage = () => {
 				</Text>
 				.
 			</Text>
+			<Link href={'/otp'} asChild>
+				<TouchableOpacity style={styles.button}>
+					<Text style={styles.buttonText}>Agree & Continue</Text>
+				</TouchableOpacity>
+			</Link>
 		</View>
 	)
 }
@@ -61,6 +67,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	buttonText: {
-		fontSize: 22
+		fontSize: 22,
+		color: Colors.primary
 	}
 })
