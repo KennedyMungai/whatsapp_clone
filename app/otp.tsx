@@ -11,6 +11,7 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
+import MaskInput from 'react-native-mask-input'
 
 const OTPPage = () => {
 	const [loading, setLoading] = useState(false)
@@ -45,6 +46,34 @@ const OTPPage = () => {
 						/>
 					</View>
 					<View style={styles.separator} />
+
+					<MaskInput
+						value={phoneNumber}
+						onChangeText={(masked, unmasked) => {
+							setPhoneNumber(masked) // you can use the unmasked value as well
+
+							// assuming you typed "9" all the way:
+							console.log(masked) // (99) 99999-9999
+							console.log(unmasked) // 99999999999
+						}}
+						mask={[
+							'(',
+							/\d/,
+							/\d/,
+							')',
+							' ',
+							/\d/,
+							/\d/,
+							/\d/,
+							/\d/,
+							/\d/,
+							'-',
+							/\d/,
+							/\d/,
+							/\d/,
+							/\d/
+						]}
+					/>
 				</View>
 				<Text style={styles.legal}>
 					You must be{' '}
