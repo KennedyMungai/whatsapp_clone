@@ -35,7 +35,7 @@ const OTPPage = () => {
 				</Text>
 				<View style={styles.list}>
 					<View style={styles.listItem}>
-						<Text>Kenya</Text>
+						<Text style={styles.listItemText}>Kenya</Text>
 					</View>
 				</View>
 			</View>
