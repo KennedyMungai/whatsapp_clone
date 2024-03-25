@@ -45,6 +45,16 @@ const OTPPage = () => {
 					</View>
 					<View style={styles.separator} />
 				</View>
+				<Text style={styles.legal}>
+					You must be{' '}
+					<Text style={styles.link} onPress={openLink}>
+						at least 16 years old
+					</Text>{' '}
+					to register. Learn how WhatsApp works with the{' '}
+					<Text style={styles.link} onPress={openLink}>
+						Meta Companies
+					</Text>
+				</Text>
 			</View>
 		</KeyboardAvoidingView>
 	)
