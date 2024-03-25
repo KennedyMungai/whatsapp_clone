@@ -1,4 +1,5 @@
 import Colors from '@/constants/Colors'
+import { defaultStyles } from '@/constants/Styles'
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
@@ -43,6 +44,7 @@ const OTPPage = () => {
 							color={Colors.gray}
 						/>
 					</View>
+					<View style={defaultStyles.separator} />
 				</View>
 			</View>
 		</KeyboardAvoidingView>
