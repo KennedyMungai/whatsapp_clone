@@ -70,6 +70,7 @@ const OTPPage = () => {
 						value={phoneNumber}
 						keyboardType='phone-pad'
 						autoFocus
+						placeholder='+254 111222333'
 						style={styles.input}
 						onChangeText={(masked, unmasked) => {
 							setPhoneNumber(masked) // you can use the unmasked value as well
