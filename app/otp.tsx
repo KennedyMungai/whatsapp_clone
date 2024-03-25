@@ -33,6 +33,7 @@ const OTPPage = () => {
 					Whatsapp will need to verify your account. Carrier Charges
 					may apply
 				</Text>
+				<View style={styles.list}></View>
 			</View>
 		</KeyboardAvoidingView>
 	)
@@ -51,5 +52,11 @@ const styles = StyleSheet.create({
 	description: {
 		fontSize: 14,
 		color: Colors.gray
+	},
+	list: {
+		backgroundColor: 'white',
+		width: '100%',
+		borderRadius: 10,
+		padding: 10
 	}
 })
