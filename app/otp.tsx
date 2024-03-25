@@ -54,7 +54,10 @@ const OTPPage = () => {
 			<View style={styles.container}>
 				{!loading && (
 					<View style={[StyleSheet.absoluteFill, styles.loading]}>
-						<ActivityIndicator />
+						<ActivityIndicator
+							size={'large'}
+							color={Colors.primary}
+						/>
 					</View>
 				)}
 				<Text style={styles.description}>
