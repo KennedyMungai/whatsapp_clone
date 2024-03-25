@@ -74,7 +74,7 @@ const InitialLayout = () => {
 	)
 }
 
-function RootLayoutNav() {
+const RootLayoutNav = () => {
 	return (
 		<ClerkProvider
 			publishableKey={PUBLISHABLE_KEY!}
@@ -84,3 +84,5 @@ function RootLayoutNav() {
 		</ClerkProvider>
 	)
 }
+
+export default RootLayoutNav
