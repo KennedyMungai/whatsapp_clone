@@ -38,7 +38,7 @@ const OTPPage = () => {
 					<View style={styles.listItem}>
 						<Text style={styles.listItemText}>Kenya</Text>
 						<Ionicons
-							name='chevron-down'
+							name='chevron-forward'
 							size={24}
 							color={Colors.primary}
 						/>
