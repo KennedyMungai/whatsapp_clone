@@ -1,11 +1,11 @@
+import { ClerkProvider } from '@clerk/clerk-expo'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
+import SecureStore from 'expo-secure-store'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
 import '../global.css'
-import { ClerkProvider } from '@clerk/clerk-expo'
-import SecureStore from 'expo-secure-store'
 
 const PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY
 
@@ -34,7 +34,7 @@ export {
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
 
-export default function RootLayout() {
+export default function InitialLayout() {
 	const [loaded, error] = useFonts({
 		SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
 		...FontAwesome.font
@@ -55,7 +55,23 @@ export default function RootLayout() {
 		return null
 	}
 
-	return <RootLayoutNav />
+	return (
+		<Stack>
+			<Stack.Screen name='index' options={{ headerShown: false }} />
+			<Stack.Screen
+				name='otp'
+				options={{
+					headerTitle: 'Enter your Phone Number',
+					animation: 'slide_from_right',
+					headerBackVisible: false
+				}}
+			/>
+			<Stack.Screen
+				name='verify/[phoneNumber]'
+				options={{ headerTitle: 'Verify Your Phone Number' }}
+			/>
+		</Stack>
+	)
 }
 
 function RootLayoutNav() {
@@ -64,21 +80,7 @@ function RootLayoutNav() {
 			publishableKey={PUBLISHABLE_KEY!}
 			tokenCache={tokenCache}
 		>
-			<Stack>
-				<Stack.Screen name='index' options={{ headerShown: false }} />
-				<Stack.Screen
-					name='otp'
-					options={{
-						headerTitle: 'Enter your Phone Number',
-						animation: 'slide_from_right',
-						headerBackVisible: false
-					}}
-				/>
-				<Stack.Screen
-					name='verify/[phoneNumber]'
-					options={{ headerTitle: 'Verify Your Phone Number' }}
-				/>
-			</Stack>
+			<InitialLayout />
 		</ClerkProvider>
 	)
 }
