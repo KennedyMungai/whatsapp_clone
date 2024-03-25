@@ -1,3 +1,4 @@
+import Colors from '@/constants/Colors'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
 import {
@@ -20,8 +21,12 @@ const OTPPage = () => {
 		Linking.openURL('https://wikipedia.com')
 	}
 
+	const sendOTP = async () => {}
+
+	const trySignIn = async () => {}
+
 	return (
-		<KeyboardAvoidingView>
+		<KeyboardAvoidingView style={styles.container}>
 			<Text>OTPPage</Text>
 		</KeyboardAvoidingView>
 	)
@@ -29,4 +34,12 @@ const OTPPage = () => {
 
 export default OTPPage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		alignItems: 'center',
+		padding: 20,
+		backgroundColor: Colors.background,
+		gap: 20
+	}
+})
