@@ -29,6 +29,25 @@ const OTPPage = () => {
 
 	const trySignIn = async () => {}
 
+	const KE_PHONE = [
+		'+',
+		/\d/,
+		/\d/,
+		/\d/,
+		' ',
+		/\d/,
+		/\d/,
+		/\d/,
+		' ',
+		/\d/,
+		/\d/,
+		/\d/,
+		' ',
+		/\d/,
+		/\d/,
+		/\d/
+	]
+
 	return (
 		<KeyboardAvoidingView style={{ flex: 1 }}>
 			<View style={styles.container}>
@@ -57,23 +76,7 @@ const OTPPage = () => {
 							console.log(masked) // (99) 99999-9999
 							console.log(unmasked) // 99999999999
 						}}
-						mask={[
-							'(',
-							/\d/,
-							/\d/,
-							')',
-							' ',
-							/\d/,
-							/\d/,
-							/\d/,
-							/\d/,
-							/\d/,
-							'-',
-							/\d/,
-							/\d/,
-							/\d/,
-							/\d/
-						]}
+						mask={KE_PHONE}
 					/>
 				</View>
 				<Text style={styles.legal}>
