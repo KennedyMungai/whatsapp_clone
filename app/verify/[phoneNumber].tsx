@@ -1,7 +1,7 @@
 import Colors from '@/constants/Colors'
 import { Stack, useLocalSearchParams } from 'expo-router'
 import React, { useEffect, useState } from 'react'
-import { Linking, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 const VerifyOTPPage = () => {
 	const { phoneNumber, signIn } = useLocalSearchParams<{
