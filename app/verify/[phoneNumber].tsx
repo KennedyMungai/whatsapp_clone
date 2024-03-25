@@ -98,11 +98,6 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.background,
 		gap: 20
 	},
-	loading: {
-		backgroundColor: 'rgba(0,0,0,0.5)',
-		alignItems: 'center',
-		justifyContent: 'center'
-	},
 	legal: {
 		fontSize: 14,
 		textAlign: 'center',
