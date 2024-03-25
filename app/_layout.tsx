@@ -49,6 +49,7 @@ function RootLayoutNav() {
 					headerBackVisible: false
 				}}
 			/>
+			<Stack.Screen name='verify/[phoneNumber]' />
 		</Stack>
 	)
 }
