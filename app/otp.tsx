@@ -69,5 +69,9 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		padding: 6,
 		marginBottom: 10
+	},
+	listItemText: {
+		fontSize: 18,
+		color: Colors.primary
 	}
 })
