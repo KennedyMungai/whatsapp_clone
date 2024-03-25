@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, Image } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import welcomeImage from '../assets/images/welcome.png'
 
 const welcome_image = Image.resolveAssetSource(welcomeImage).uri
@@ -8,6 +8,7 @@ const MainAppPage = () => {
 	return (
 		<View style={styles.container}>
 			<Image source={{ uri: welcome_image }} style={styles.image} />
+			<Text>Welcome Page</Text>
 		</View>
 	)
 }
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
 	},
 	image: {
 		width: '100%',
-		height: 300
+		height: 300,
+		marginBottom: 80
 	}
 })
