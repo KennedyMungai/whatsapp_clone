@@ -6,7 +6,8 @@ import {
 	Linking,
 	Platform,
 	StyleSheet,
-	Text
+	Text,
+	View
 } from 'react-native'
 
 const OTPPage = () => {
@@ -26,8 +27,8 @@ const OTPPage = () => {
 	const trySignIn = async () => {}
 
 	return (
-		<KeyboardAvoidingView style={styles.container}>
-			<Text>OTPPage</Text>
+		<KeyboardAvoidingView>
+			<View style={styles.container}></View>
 		</KeyboardAvoidingView>
 	)
 }
