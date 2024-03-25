@@ -31,7 +31,7 @@ const OTPPage = () => {
 
 		setTimeout(() => {
 			setLoading(false)
-			// router.push('/otp')
+			router.push(`/verify/${phoneNumber}`)
 		}, 2000)
 	}
 
