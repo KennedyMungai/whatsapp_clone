@@ -55,5 +55,13 @@ const styles = StyleSheet.create({
 	},
 	link: {
 		color: Colors.primary
+	},
+	button: {
+		width: '100%',
+		height: 60,
+		borderRadius: 50,
+		backgroundColor: Colors.primary,
+		justifyContent: 'center',
+		alignItems: 'center'
 	}
 })
