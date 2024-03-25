@@ -49,6 +49,7 @@ const OTPPage = () => {
 
 					<MaskInput
 						value={phoneNumber}
+						style={styles.input}
 						onChangeText={(masked, unmasked) => {
 							setPhoneNumber(masked) // you can use the unmasked value as well
 
@@ -165,5 +166,12 @@ const styles = StyleSheet.create({
 	enabled: {
 		backgroundColor: Colors.primary,
 		color: 'white'
+	},
+	input: {
+		backgroundColor: 'white',
+		width: '100%',
+		fontSize: 16,
+		padding: 6,
+		marginTop: 10
 	}
 })
