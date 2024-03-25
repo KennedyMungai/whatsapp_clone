@@ -6,10 +6,23 @@ import Colors from '@/constants/Colors'
 const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 
 const MainAppPage = () => {
+	const openLink = () => {}
+
 	return (
 		<View style={styles.container}>
 			<Image source={{ uri: welcome_image }} style={styles.image} />
 			<Text style={styles.headline}>Welcome to Whatsapp Clone</Text>
+			<Text style={styles.description}>
+				Read our{' '}
+				<Text style={styles.link} onPress={openLink}>
+					Privacy Policy
+				</Text>
+				. {'Tap "Agree & Continue" to accept the '}
+				<Text style={styles.link} onPress={openLink}>
+					Terms of Service
+				</Text>
+				.
+			</Text>
 		</View>
 	)
 }
