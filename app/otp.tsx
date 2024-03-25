@@ -14,7 +14,7 @@ import {
 
 const OTPPage = () => {
 	const [loading, setLoading] = useState(false)
-	const [phoneNumber, setPhoneNumber] = useState('12')
+	const [phoneNumber, setPhoneNumber] = useState('')
 
 	const router = useRouter()
 
