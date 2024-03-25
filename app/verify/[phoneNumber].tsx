@@ -1,7 +1,7 @@
 import Colors from '@/constants/Colors'
 import { Stack, useLocalSearchParams } from 'expo-router'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const VerifyOTPPage = () => {
 	const { phoneNumber, signIn } = useLocalSearchParams<{
@@ -35,6 +35,12 @@ const VerifyOTPPage = () => {
 				To complete your phone number verification, please enter the 6
 				digit verification code
 			</Text>
+
+			<TouchableOpacity style={styles.button} onPress={resendCode}>
+				<Text style={styles.buttonText}>
+					Didn't receive a verification code
+				</Text>
+			</TouchableOpacity>
 		</View>
 	)
 }
