@@ -1,5 +1,5 @@
 import Colors from '@/constants/Colors'
-import { Stack, useLocalSearchParams } from 'expo-router'
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router'
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import {
@@ -16,6 +16,8 @@ const VerifyOTPPage = () => {
 	}>()
 
 	const [code, setCode] = useState('')
+
+	const router = useRouter()
 
 	useEffect(() => {
 		if (code.length === 6) {
