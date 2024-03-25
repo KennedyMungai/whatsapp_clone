@@ -27,7 +27,7 @@ const OTPPage = () => {
 	const trySignIn = async () => {}
 
 	return (
-		<KeyboardAvoidingView>
+		<KeyboardAvoidingView style={{ flex: 1 }}>
 			<View style={styles.container}></View>
 			<Text style={styles.description}>
 				Whatsapp will need to verify your account. Carrier Charges may
