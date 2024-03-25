@@ -49,7 +49,10 @@ function RootLayoutNav() {
 					headerBackVisible: false
 				}}
 			/>
-			<Stack.Screen name='verify/[phoneNumber]' />
+			<Stack.Screen
+				name='verify/[phoneNumber]'
+				options={{ headerTitle: 'Verify Your Phone Number' }}
+			/>
 		</Stack>
 	)
 }
