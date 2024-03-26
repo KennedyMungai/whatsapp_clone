@@ -1,9 +1,15 @@
 import Colors from '@/constants/Colors'
+import {
+	isClerkAPIResponseError,
+	useSignIn,
+	useSignUp
+} from '@clerk/clerk-expo'
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
 import {
 	ActivityIndicator,
+	Alert,
 	KeyboardAvoidingView,
 	Linking,
 	Platform,
@@ -26,13 +32,32 @@ const OTPPage = () => {
 		Linking.openURL('https://wikipedia.com')
 	}
 
+	const { signUp, setActive } = useSignUp()
+	const { signIn } = useSignIn()
+
 	const sendOTP = async () => {
 		setLoading(true)
 
-		setTimeout(() => {
-			setLoading(false)
+		try {
+			await signUp!.create({
+				phoneNumber
+			})
+
+			signUp!.preparePhoneNumberVerification()
+
 			router.push(`/verify/${phoneNumber}`)
-		}, 200)
+		} catch (error: any) {
+			if (isClerkAPIResponseError(error)) {
+				if (error.errors[0].code === 'form_identifier_exist') {
+					console.log('user exists')
+
+					await trySignIn()
+				} else {
+					setLoading(false)
+					Alert.alert('Error', error.errors[0].message)
+				}
+			}
+		}
 	}
 
 	const trySignIn = async () => {}
