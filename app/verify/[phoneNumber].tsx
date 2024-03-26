@@ -58,7 +58,22 @@ const VerifyOTPPage = () => {
 		}
 	}
 
-	const verifySignIn = async () => {}
+	const verifySignIn = async () => {
+		try {
+			await anotherSignIn!.attemptFirstFactor({
+				strategy: 'phone_code',
+				code
+			})
+
+			await setActive!({ session: anotherSignIn!.createdSessionId })
+		} catch (error) {
+			console.log('Error', JSON.stringify(error, null, 2))
+
+			if (isClerkAPIResponseError(error)) {
+				Alert.alert('Error', error.errors[0].message)
+			}
+		}
+	}
 
 	const resendCode = async () => {}
 
