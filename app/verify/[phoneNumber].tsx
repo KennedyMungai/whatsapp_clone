@@ -1,7 +1,12 @@
 import Colors from '@/constants/Colors'
-import { Stack, useLocalSearchParams, useRouter } from 'expo-router'
+import {
+	isClerkAPIResponseError,
+	useSignIn,
+	useSignUp
+} from '@clerk/clerk-expo'
+import { Stack, useLocalSearchParams } from 'expo-router'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import {
 	CodeField,
 	Cursor,
@@ -27,6 +32,9 @@ const VerifyOTPPage = () => {
 		}
 	}, [code])
 
+	const { signUp, setActive } = useSignUp()
+	const { signIn: anotherSignIn } = useSignIn()
+
 	const CELL_COUNT = 6
 
 	const ref = useBlurOnFulfill({ value: code, cellCount: CELL_COUNT })
@@ -36,7 +44,19 @@ const VerifyOTPPage = () => {
 		setValue: setCode
 	})
 
-	const verifyCode = async () => {}
+	const verifyCode = async () => {
+		try {
+			await signUp!.attemptPhoneNumberVerification({ code })
+
+			await setActive!({ session: signUp!.createdSessionId })
+		} catch (error) {
+			console.log('error', JSON.stringify(error, null, 2))
+
+			if (isClerkAPIResponseError(error)) {
+				Alert.alert('Error', error.errors[0].message)
+			}
+		}
+	}
 
 	const verifySignIn = async () => {}
 
