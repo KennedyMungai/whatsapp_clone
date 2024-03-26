@@ -104,6 +104,7 @@ const OTPPage = () => {
 
 	return (
 		<KeyboardAvoidingView
+			behavior='padding'
 			keyboardVerticalOffset={keyboardPlatformOffset}
 			style={{ flex: 1 }}
 		>
