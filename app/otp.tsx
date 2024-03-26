@@ -26,7 +26,7 @@ const OTPPage = () => {
 
 	const router = useRouter()
 
-	// const keyboardPlatformOffset = Platform.OS === 'ios' ? 90 : 0
+	const keyboardPlatformOffset = Platform.OS === 'ios' ? 90 : 0
 
 	const openLink = () => {
 		Linking.openURL('https://wikipedia.com')
@@ -103,7 +103,10 @@ const OTPPage = () => {
 	]
 
 	return (
-		<KeyboardAvoidingView style={{ flex: 1 }}>
+		<KeyboardAvoidingView
+			keyboardVerticalOffset={keyboardPlatformOffset}
+			style={{ flex: 1 }}
+		>
 			<View style={styles.container}>
 				{loading && (
 					<View style={[StyleSheet.absoluteFill, styles.loading]}>
