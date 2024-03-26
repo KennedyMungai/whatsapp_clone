@@ -75,7 +75,40 @@ const VerifyOTPPage = () => {
 		}
 	}
 
-	const resendCode = async () => {}
+	const resendCode = async () => {
+		try {
+			if (signIn === 'true') {
+				const { supportedFirstFactors } = await anotherSignIn!.create({
+					identifier: phoneNumber
+				})
+
+				const firstPhoneFactor: any = supportedFirstFactors.find(
+					(factor: any) => {
+						return factor.strategy === 'phone_code'
+					}
+				)
+
+				const { phoneNumberId } = firstPhoneFactor
+
+				await anotherSignIn!.prepareFirstFactor({
+					strategy: 'phone_code',
+					phoneNumberId
+				})
+			} else {
+				await signUp!.create({
+					phoneNumber
+				})
+
+				signUp!.preparePhoneNumberVerification()
+			}
+		} catch (error) {
+			console.log('Error', JSON.stringify(error, null, 2))
+
+			if (isClerkAPIResponseError(error)) {
+				Alert.alert('Error ', error.errors[0].message)
+			}
+		}
+	}
 
 	return (
 		<View style={styles.container}>
