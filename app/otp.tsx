@@ -20,7 +20,7 @@ const OTPPage = () => {
 
 	const router = useRouter()
 
-	const keyboardPlatformOffset = Platform.OS === 'ios' ? 90 : 0
+	// const keyboardPlatformOffset = Platform.OS === 'ios' ? 90 : 0
 
 	const openLink = () => {
 		Linking.openURL('https://wikipedia.com')
