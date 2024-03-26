@@ -60,7 +60,17 @@ const OTPPage = () => {
 		}
 	}
 
-	const trySignIn = async () => {}
+	const trySignIn = async () => {
+		const { supportedFirstFactors } = await signIn!.create({
+			identifier: phoneNumber
+		})
+
+		const firstPhoneFactor: any = supportedFirstFactors.find(
+			(factor: any) => {
+				return factor.strategy === 'phone_code'
+			}
+		)
+	}
 
 	const KE_PHONE = [
 		'+',
